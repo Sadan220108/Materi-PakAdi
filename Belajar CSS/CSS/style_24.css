@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: aqua;
+}
+.main{
+    width: 900px;
+    margin: 30px auto;
+}
+article img{
+    width: 400px;
+    float: left;
+    margin: 10px 20px;
+}
+article h2{
+    margin-top: 30px;
+}
+hr{
+    border: 1px solid teal;
+    margin-top: 10px;
+}
+article p{
+    line-height: 28px;
+    text-align: justify;
+}

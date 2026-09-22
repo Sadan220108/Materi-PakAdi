@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Personal</title>
+</head>
+<body>
+    <h1>Form Data Personal</h1>
+    <form action="entripersonal.php" method="post" enctype="text/plain">
+        Nama: 
+        <input type="text" name="name" placeholder="Nama Lengkap" size="20">
+        <br>
+        Tempat/Tgl Lahir: 
+        <input type="text" name="tplahir" placeholder="Tempat Lahir" size="20">
+        <input type="text" name="tgllahir" placeholder="tgl Lahir" size="20">
+        <br>
+        Jenis Kelamin: 
+        <input type="radio" name="jk" value="L">laki laki</button>
+        <input type="radio" name="jk" value="L">perempuan</button>
+        <br>
+        Golongan Darah: 
+        <input type="radio" name="gdarah" value="A">A
+        <input type="radio" name="gdarah" value="B">B
+        <input type="radio" name="gdarah" value="O">O
+        <input type="radio" name="gdarah" value="AB">AB
+        <br>
+        Alamat: 
+        <input type="text" name="address" placeholder="Alamat rumah" size="50">
+        <br>
+        RT/RW: 
+        <input type="text" name="rt" placeholder="RT" size="4">
+        <input type="text" name="rw" placeholder="RW" size="4">
+        <br>
+        Kelurahan: 
+        <input type="text" name="kel" placeholder="Kelurahan" size="50">
+        <br>
+        Kecamatan: 
+        <input type="text" name="kec" placeholder="Kecamatan" size="50">
+        <br>
+        Agama: 
+        <input type="radio" name="agama" value="1">Islam
+        <input type="radio" name="agama" value="2">Kristen
+        <input type="radio" name="agama" value="3">Katolik
+        <input type="radio" name="agama" value="4">Hindu
+        <input type="radio" name="agama" value="5">Buddha
+        <br>
+        Status Perkawinan:
+        <select>
+            <option value="1">Lajang</option>
+            <option value="2">Menikah</option>
+            <option value="3">Janda</option>
+            <option value="4">Duda</option>
+        </select>
+        <br>
+        Pekerjaan: 
+        <select>
+            <option value="1">PNS</option>
+            <option value="2">Swasta</option>
+            <option value="3">Wirausaha</option>
+            <option value="4">Tidak bekerja</option>
+        </select>
+        <br>
+        Kewarganegaraan:
+        <select>
+            <option value="1">WNI</option>
+            <option value="2">WNA</option>
+        </select>
+        <br>
+        Masa Berlaku:
+        <input type="text" name="masalaku" placeholder="Masa berlaku" size="20">
+        <br>
+        <button type="submit">Rekam</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

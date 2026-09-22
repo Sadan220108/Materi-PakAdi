@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <script lang="JavaScript">
+            function warna (pilihan)
+            {
+                alert("anda memilih warna" + pilihan);
+                document.bgColor=pilihan;
+            }
+        </script>
+        <h1 align="center">Latihan Event OnClick</h1>
+        <hr width="500" color="black" noshade>
+        <h3 align="center">Pilih Warna Favorit anda.</h3>
+        <center>
+            <form>
+                <input type="button" value="Biru" onclick="warna('lightblue')">
+                <input type="button" value="Pink" onclick="warna('Pink')">
+                <input type="button" value="Coklat" onclick="warna('burlywood')">
+                <input type="button" value="Kelabu" onclick="warna('darkgray')">
+                <input type="button" value="Oranye" onclick="warna('peachpuff')">
+                <input type="button" value="Putih" onclick="warna('white')">
+            </form>
+            <form>
+                <img name="coolfan" src="kipas.gif" width=61 height=72><br><br>
+                <input type=button value=" Off" onClick="coolfan.src = 'kipas.png'">
+                <input type=button value=" On " onClick="coolfan.src = 'kipas.gif'">
+            </form>
+        </center>
+        <hr width="500" color="black" noshade>
+    </body>
+</html>

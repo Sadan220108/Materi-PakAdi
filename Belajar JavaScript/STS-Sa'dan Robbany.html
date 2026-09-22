@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sistem Inventaris Barang</title>
+<style>
+    body{
+    font-family:Times New Roman;
+    margin:30px;
+    }
+
+    input{
+    padding:5px;
+    margin-right:5px;
+    }
+
+    button{
+    padding:5px 10px;
+    cursor:pointer;
+    }
+
+    table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    }
+
+    th,td{
+    border:1px solid black;
+    padding:8px;
+    text-align:left;
+    }
+
+    th{
+    background:#eee;
+    }
+
+</style>
+</head>
+    <body>
+    <h1>Sistem Inventaris Barang</h1>
+    <p>Project UTS Pemrograman Web - Nama: <b>Sa'dan Robbany</b> | Kelas: <b>11 RPL</b></p>
+    <hr>
+    <h3>Tambah Barang Baru</h3>
+    Nama Barang:
+    <input type="text" id="namaBarang" placeholder="Nama Barang">
+    Harga Satuan:
+    <input type="number" id="hargaBarang" placeholder="Harga">
+    <button onclick="tambahBarang()">Tambah</button>
+
+    <h3>Daftar Inventaris</h3>
+        <table>
+            <thead>
+                <tr>
+                <th>No</th>
+                <th>Nama Barang</th>
+                <th>Harga (Rp)</th>
+                <th>Aksi</th>
+                </tr>
+            </thead>
+        <tbody id="tabelBarang"></tbody>
+
+        </table>
+        <script>
+            let barang = JSON.parse(localStorage.getItem("dataBarang")) || [];
+
+            function simpanData(){
+            localStorage.setItem("dataBarang", JSON.stringify(barang));
+            }
+
+            function tampilkanBarang(){
+
+            let tabel = document.getElementById("tabelBarang");
+            tabel.innerHTML="";
+
+            barang.forEach((item,index)=>{
+
+            tabel.innerHTML += `
+                <tr>
+                <td>${index+1}</td>
+                <td>${item.nama}</td>
+                <td>Rp ${item.harga.toLocaleString()}</td>
+                <td>
+                <button onclick="editBarang(${index})">Ubah</button>
+                <button onclick="hapusBarang(${index})">Hapus</button>
+                </td>
+                </tr>`;
+
+            });
+
+        }
+
+            function tambahBarang(){
+
+            let nama = document.getElementById("namaBarang").value;
+            let harga = document.getElementById("hargaBarang").value;
+
+            if(nama=="" || harga==""){
+            alert("Data harus diisi!");
+            return;
+            }
+
+            barang.push({
+            nama:nama,
+            harga:parseInt(harga)
+            });
+
+            simpanData();
+
+            document.getElementById("namaBarang").value="";
+            document.getElementById("hargaBarang").value="";
+
+            tampilkanBarang();
+            }
+
+            function hapusBarang(index){
+
+            if(confirm("Yakin ingin menghapus?")){
+
+            barang.splice(index,1);
+
+            simpanData();
+
+            tampilkanBarang();
+
+            }
+
+        }
+
+            function editBarang(index){
+
+            let namaBaru = prompt("Edit Nama Barang",barang[index].nama);
+            let hargaBaru = prompt("Edit Harga Barang",barang[index].harga);
+
+            if(namaBaru!=null && hargaBaru!=null){
+
+            barang[index].nama = namaBaru;
+            barang[index].harga = parseInt(hargaBaru);
+
+            simpanData();
+
+            tampilkanBarang();
+
+            }
+
+        }
+
+            tampilkanBarang();
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+.navigasi:any-link{
+    color: rgb(135, 18, 18);
+}
+.navigasi:visited{
+    color: greenyellow;
+}
+.navigasi :hover{
+    background-color: black;
+}
+.navigasi:active{
+    color: pink;
+}
+ul li a:link{
+    color: red;
+}
+ul li a:hover{
+    background-color: rgb(182,224,30);
+    color: rgb(233,59,15);
+}

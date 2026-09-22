@@ -1,0 +1,12 @@
+div {
+  color: red;
+}
+.header {
+  color: red;
+}
+.header,.footer{
+  color: red;
+}
+span {
+  color: blue;
+}

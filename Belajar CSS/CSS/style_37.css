@@ -1,0 +1,17 @@
+/*versi smartphone*/
+@media only screen and (max-width:576px) {
+.con-fontawesome {
+  width: 800px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box-icon{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+}

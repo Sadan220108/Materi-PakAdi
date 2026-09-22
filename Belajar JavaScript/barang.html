@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Barang</title>
+    <style>
+        body{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+        input, button{margin: 5px;}
+    </style>
+</head>
+<body>
+    <h2>Manajemen Barang</h2>
+    <input type="text" id="nama" placeholder="Nama Barang">
+    <input type="number" id="harga" placeholder="Harga">
+    <button onclick="tambahbarang()">Tambah</button>
+
+    <ul id="daftar"></ul>
+    <script>
+        let barang = JSON.parse(localStorage.getItem("barang")) || [];
+
+        function tampilkan(){
+            let daftar = document.getElementById("daftar");
+            daftar.innerHTML = "";
+            barang.forEach((item,index)=>{
+                daftar.innerHTML += 
+                <li>
+                    ${item.nama} - Rp ${item.harga}
+                    <button onclick="editbarang(${index})">Edit</button>  
+                    <button onclick="hapusbarang(${index})">Hapus</button>  
+                </li>;
+            });
+        }
+        function tambahbarang(){
+            let nama = document.getElementById("nama").value;
+            let harga = document.getElementById("harga").value;
+            barang.push({nama, harga});
+            localStorage.setItem("barang". JSON.stringify(barang));
+            tampilkan();
+        }
+        function hapusbarang(index){
+            barang.splice(index,1);
+            localStorage.getItem("barang". JSON.stringify(barang));
+            tampilkan();
+        }
+        function editbarang(index){
+            let namaBaru = prompt("Edit Nama:", barang(index).nama);
+            let hargaBaru = prompt("Edit Harga:", barang(index).harga);
+            barang[index].nama = namaBaru;
+            barang[index].harga = hargaBaru;
+            localStorage.setItem("barang", JSON.stringify(barang));
+            tampilkan();
+        }
+        tampilkan();
+    </script>
+</body>
+</html>
